@@ -3,7 +3,7 @@ using BattleBitAPI.Common;
 using BattleBitBaseModules;
 using BBRAPIModules;
 using Commands;
-using DynamicGamemode.GameModes;
+using DynamicGamemode;
 using System;
 using System.Collections.Generic;
 using System.Linq;

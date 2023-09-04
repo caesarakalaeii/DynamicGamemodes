@@ -1,6 +1,6 @@
 ﻿using BBRAPIModules;
 
-namespace DynamicGamemode.GameModes;
+namespace DynamicGamemode;
 
 public class Hardcore : GameMode
 {
