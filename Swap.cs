@@ -1,12 +1,12 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
-using DynamicGamemode;
+using DynamicGamemodes;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class Swap : GameMode
 {
-    public Swap(DynamicGameMode r) : base(r)
+    public Swap(DynamicGameModes r) : base(r)
     {
         Name = "Swappers";
     }

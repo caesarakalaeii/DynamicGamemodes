@@ -1,12 +1,12 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
-using DynamicGamemode;
+using DynamicGamemodes;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class LifeSteal : GameMode
 {
-    public LifeSteal(DynamicGameMode r) : base(r)
+    public LifeSteal(DynamicGameModes r) : base(r)
     {
         Name = "LifeSteal";
     }

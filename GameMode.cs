@@ -1,9 +1,9 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
 using System.Threading.Tasks;
-using DynamicGamemode;
+using DynamicGamemodes;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class Returner
 {
@@ -18,9 +18,9 @@ public class Returner
 public class GameMode
 {
     public string Name = string.Empty;
-    protected DynamicGameMode R;
+    protected DynamicGameModes R;
 
-    protected GameMode(DynamicGameMode r)
+    protected GameMode(DynamicGameModes r)
     {
         R = r;
     }

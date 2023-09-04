@@ -1,9 +1,9 @@
 using BattleBitAPI.Common;
 using BBRAPIModules;
-using DynamicGamemode;
+using DynamicGamemodes;
 using System.Collections.Generic;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class GunGame : GameMode
 {
@@ -33,7 +33,7 @@ public class GunGame : GameMode
         Weapons.SSG69
     };
 
-    public GunGame(DynamicGameMode r) : base(r)
+    public GunGame(DynamicGameModes r) : base(r)
     {
         Name = "GunGame";
         GunGamePlayerData data = new();

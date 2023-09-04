@@ -1,11 +1,11 @@
 ﻿using BBRAPIModules;
-using DynamicGamemode;
+using DynamicGamemodes;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class Hardcore : GameMode
 {
-    public Hardcore(DynamicGameMode r) : base(r)
+    public Hardcore(DynamicGameModes r) : base(r)
     {
         Name = "Hardcore";
     }

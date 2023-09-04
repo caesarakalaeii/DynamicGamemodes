@@ -1,12 +1,12 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
-using DynamicGamemode;
+using DynamicGamemodes;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class MeleeOnly : GameMode
 {
-    public MeleeOnly(DynamicGameMode r) : base(r)
+    public MeleeOnly(DynamicGameModes r) : base(r)
     {
         Name = "MeleeOnly";
     }

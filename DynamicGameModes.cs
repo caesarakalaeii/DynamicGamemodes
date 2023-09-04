@@ -6,21 +6,21 @@ using Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static DynamicGamemode.GameMode;
-using static DynamicGamemode.GunGame;
-using static DynamicGamemode.TeamGunGame;
-using static DynamicGamemode.Hardcore;
-using static DynamicGamemode.LifeSteal;
-using static DynamicGamemode.Swap;
-using static DynamicGamemode.MeleeOnly;
-using static DynamicGamemode.Csgo;
+using static DynamicGamemodes.GameMode;
+using static DynamicGamemodes.GunGame;
+using static DynamicGamemodes.TeamGunGame;
+using static DynamicGamemodes.Hardcore;
+using static DynamicGamemodes.LifeSteal;
+using static DynamicGamemodes.Swap;
+using static DynamicGamemodes.MeleeOnly;
+using static DynamicGamemodes.Csgo;
 using System.Threading.Tasks;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 
 [RequireModule(typeof(CommandHandler)), RequireModule(typeof(RichText))]
-public class DynamicGameMode: BattleBitModule
+public class DynamicGameModes: BattleBitModule
 {
     
     [ModuleReference]
@@ -33,7 +33,7 @@ public class DynamicGameMode: BattleBitModule
 
 
 
-    public DynamicGameMode()
+    public DynamicGameModes()
     {
         _mCyclePlaylist = false;
         mGameModes = new List<GameMode>

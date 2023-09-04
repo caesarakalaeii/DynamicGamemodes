@@ -1,11 +1,11 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
-using DynamicGamemode;
+using DynamicGamemodes;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 public class Csgo : GameMode
 {
-    public Csgo(DynamicGameMode r) : base(r)
+    public Csgo(DynamicGameModes r) : base(r)
     {
         Name = "CSGO";
     }
