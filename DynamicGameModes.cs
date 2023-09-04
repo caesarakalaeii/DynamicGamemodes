@@ -97,6 +97,16 @@ public class DynamicGameModes: BattleBitModule
         Server.AnnounceShort($"GameMode is now {mCurrentGameMode.Name}");
         Console.WriteLine($"GameMode is now {mCurrentGameMode.Name}");
     }
+
+    [CommandCallback("start", Description = "Starts the Game, disregarding player count")]
+    public void forceStart(RunnerPlayer commandSource)
+    {
+        Server.ForceStartGame();
+
+        Server.AnnounceShort($"Starting Game");
+        Console.WriteLine($"Starting Game");
+    }
+
     [CommandCallback("SetGM", Description = "Sets the Gamemode to a specific one in Playlist and resets all Players")]
     public void SetGameModeCommand(RunnerPlayer commandSource, string gamemodeName)
     {
