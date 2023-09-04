@@ -48,20 +48,31 @@ public class DynamicGameModes: BattleBitModule
     }
 
 
-    
+
     //GAMEMODE PASSTHROUGH
+
+    public override Task<OnPlayerSpawnArguments?> OnPlayerSpawning(RunnerPlayer player, OnPlayerSpawnArguments request)
+    {
+        var ret = mCurrentGameMode.OnPlayerSpawning(player, request);
+        return base.OnPlayerSpawning(ret.Player, ret.SpawnArguments);
+    }
+    public override Task OnPlayerSpawned(RunnerPlayer player)
+    {
+        var ret = mCurrentGameMode.OnPlayerSpawned(player);
+        return base.OnPlayerSpawned(ret);
+    }
 
     public override Task OnAPlayerDownedAnotherPlayer(OnPlayerKillArguments<RunnerPlayer> args)
     {
         
-        mCurrentGameMode.OnAPlayerDownedAnotherPlayer(args);
-        return Task.CompletedTask;
+        var ret = mCurrentGameMode.OnAPlayerDownedAnotherPlayer(args);
+        return base.OnAPlayerDownedAnotherPlayer(ret);
     }
 
     public override Task OnPlayerGivenUp(RunnerPlayer player)
     {
-        mCurrentGameMode.OnPlayerGivenUp(player);
-        return Task.CompletedTask;
+        var ret = mCurrentGameMode.OnPlayerGivenUp(player);
+        return base.OnPlayerGivenUp(ret);
     }
     
     public override Task OnPlayerConnected(RunnerPlayer player)
