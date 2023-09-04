@@ -3,13 +3,13 @@ using BattleBitAPI.Common;
 using BattleBitBaseModules;
 using BBRAPIModules;
 using Commands;
-using GameModeModule.GameModes;
+using DynamicGamemodes.GameModes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GameModeModule;
+namespace DynamicGamemodes;
 
 
 [RequireModule(typeof(CommandHandler)), RequireModule(typeof(RichText))]

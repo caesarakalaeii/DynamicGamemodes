@@ -1,7 +1,7 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
 
-namespace GameModeModule.GameModes;
+namespace DynamicGamemodes.GameModes;
 
 public class LifeSteal : GameMode
 {
