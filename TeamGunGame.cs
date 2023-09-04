@@ -1,8 +1,9 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
+using DynamicGamemode;
 using System.Collections.Generic;
 
-namespace DynamicGamemode
+namespace DynamicGamemodes
 {
     public class TeamGunGame : GameMode
     {

@@ -1,7 +1,8 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
+using DynamicGamemode;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class Swap : GameMode
 {
@@ -21,9 +22,9 @@ public class Swap : GameMode
     public override OnPlayerKillArguments<RunnerPlayer> OnAPlayerDownedAnotherPlayer(
         OnPlayerKillArguments<RunnerPlayer> onPlayerKillArguments)
     {
-        
+
         var victimPos = onPlayerKillArguments.VictimPosition;
-        onPlayerKillArguments.Killer.Teleport(victimPos); 
+        onPlayerKillArguments.Killer.Teleport(victimPos);
         onPlayerKillArguments.Victim.Kill();
         return base.OnAPlayerDownedAnotherPlayer(onPlayerKillArguments);
     }

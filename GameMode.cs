@@ -1,8 +1,9 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
 using System.Threading.Tasks;
+using DynamicGamemode;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class Returner
 {

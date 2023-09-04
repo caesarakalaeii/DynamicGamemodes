@@ -10,4 +10,8 @@
     <PackageReference Include="BBRAPIModules" Version="0.4.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GameModes\" />
+  </ItemGroup>
+
 </Project>

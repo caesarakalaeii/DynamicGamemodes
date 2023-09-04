@@ -1,13 +1,14 @@
 using BattleBitAPI.Common;
 using BBRAPIModules;
+using DynamicGamemode;
 using System.Collections.Generic;
 
-namespace DynamicGamemode;
+namespace DynamicGamemodes;
 
 public class GunGame : GameMode
 {
     private readonly GunGamePlayerData _data = new();
-    
+
     private readonly List<Weapon> _mGunGame = new()
     {
         Weapons.Glock18,
@@ -106,7 +107,7 @@ public class GunGame : GameMode
         R.Server.ServerSettings.TeamlessMode = false;
         foreach (var player in R.Server.AllPlayers)
         {
-            _data.SetLevel(player,0);
+            _data.SetLevel(player, 0);
             player.Kill();
         }
     }
@@ -120,7 +121,7 @@ public class GunGamePlayerData : GameModePlayerData
     public int GetLevel(RunnerPlayer player)
     {
         if (Levels.TryGetValue(player.SteamID, value: out var level)) return level;
-        Levels.Add(player.SteamID,0);
+        Levels.Add(player.SteamID, 0);
         return 0;
 
     }
