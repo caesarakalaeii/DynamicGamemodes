@@ -2,14 +2,14 @@
 using BBRAPIModules;
 using System.Collections.Generic;
 
-namespace DynamicGamemodes.GameModes;
-
-public class TeamGunGame : GameMode
+namespace DynamicGamemode.GameModes
 {
-    public int LevelA;
-    public int LevelB;
+    public class TeamGunGame : GameMode
+    {
+        public int LevelA;
+        public int LevelB;
 
-    public List<WeaponItem> ProgressionList = new()
+        public List<WeaponItem> ProgressionList = new()
     {
         new WeaponItem
         {
@@ -102,74 +102,75 @@ public class TeamGunGame : GameMode
         }
     };
 
-    public TeamGunGame(DynamicGameMode r) : base(r)
-    {
-        Name = "TeamGunGame";
-        LevelA = 0;
-        LevelB = 0;
-    }
-
-    public override Returner OnPlayerSpawning(RunnerPlayer player, OnPlayerSpawnArguments request)
-    {
-        var level = 0;
-        if (player.Team == Team.TeamA) level = LevelA;
-        else if (player.Team == Team.TeamB) level = LevelB;
-
-        request.Loadout.PrimaryWeapon = ProgressionList[level];
-        request.Loadout.SecondaryWeapon = default;
-        request.Loadout.LightGadget = null;
-        request.Loadout.Throwable = null;
-        request.Loadout.FirstAid = null;
-        request.Loadout.HeavyGadget = new Gadget("Sledge Hammer");
-        return base.OnPlayerSpawning(player, request);
-    }
-
-    public override RunnerPlayer OnPlayerSpawned(RunnerPlayer player)
-    {
-        player.Modifications.RespawnTime = 0f;
-        player.Modifications.RunningSpeedMultiplier = 1.25f;
-        player.Modifications.FallDamageMultiplier = 0f;
-        player.Modifications.JumpHeightMultiplier = 1.5f;
-        player.Modifications.DisableBleeding();
-        return base.OnPlayerSpawned(player);
-    }
-
-    public override OnPlayerKillArguments<RunnerPlayer> OnAPlayerDownedAnotherPlayer(
-        OnPlayerKillArguments<RunnerPlayer> args)
-    {
-        args.Victim.Kill();
-        int level;
-        if (args.Killer.Team == Team.TeamA)
+        public TeamGunGame(DynamicGameMode r) : base(r)
         {
-            LevelA++;
-            level = LevelA;
-        }
-        else
-        {
-            LevelB++;
-            level = LevelB;
+            Name = "TeamGunGame";
+            LevelA = 0;
+            LevelB = 0;
         }
 
-        if (level == ProgressionList.Count)
+        public override Returner OnPlayerSpawning(RunnerPlayer player, OnPlayerSpawnArguments request)
         {
-            R.Server.AnnounceShort($"{args.Killer.Team.ToString()} only needs 1 more Kill");
+            var level = 0;
+            if (player.Team == Team.TeamA) level = LevelA;
+            else if (player.Team == Team.TeamB) level = LevelB;
+
+            request.Loadout.PrimaryWeapon = ProgressionList[level];
+            request.Loadout.SecondaryWeapon = default;
+            request.Loadout.LightGadget = null;
+            request.Loadout.Throwable = null;
+            request.Loadout.FirstAid = null;
+            request.Loadout.HeavyGadget = new Gadget("Sledge Hammer");
+            return base.OnPlayerSpawning(player, request);
         }
-        else if (level > ProgressionList.Count)
+
+        public override RunnerPlayer OnPlayerSpawned(RunnerPlayer player)
         {
-            R.Server.AnnounceLong($"{args.Killer.Team.ToString()} won the Game");
-            R.Server.ForceEndGame();
-            Reset();
+            player.Modifications.RespawnTime = 0f;
+            player.Modifications.RunningSpeedMultiplier = 1.25f;
+            player.Modifications.FallDamageMultiplier = 0f;
+            player.Modifications.JumpHeightMultiplier = 1.5f;
+            player.Modifications.DisableBleeding();
+            return base.OnPlayerSpawned(player);
         }
 
-        return base.OnAPlayerDownedAnotherPlayer(args);
-    }
+        public override OnPlayerKillArguments<RunnerPlayer> OnAPlayerDownedAnotherPlayer(
+            OnPlayerKillArguments<RunnerPlayer> args)
+        {
+            args.Victim.Kill();
+            int level;
+            if (args.Killer.Team == Team.TeamA)
+            {
+                LevelA++;
+                level = LevelA;
+            }
+            else
+            {
+                LevelB++;
+                level = LevelB;
+            }
+
+            if (level == ProgressionList.Count)
+            {
+                R.Server.AnnounceShort($"{args.Killer.Team.ToString()} only needs 1 more Kill");
+            }
+            else if (level > ProgressionList.Count)
+            {
+                R.Server.AnnounceLong($"{args.Killer.Team.ToString()} won the Game");
+                R.Server.ForceEndGame();
+                Reset();
+            }
+
+            return base.OnAPlayerDownedAnotherPlayer(args);
+        }
 
 
-    public override void Reset()
-    {
-        LevelA = 0;
-        LevelB = 0;
+        public override void Reset()
+        {
+            LevelA = 0;
+            LevelB = 0;
 
-        base.Reset();
+            base.Reset();
+        }
     }
 }

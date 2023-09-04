@@ -2,7 +2,7 @@
 using BBRAPIModules;
 using System.Threading.Tasks;
 
-namespace DynamicGamemodes.GameModes;
+namespace DynamicGamemode.GameModes;
 
 public class Returner
 {

@@ -2,7 +2,7 @@ using BattleBitAPI.Common;
 using BBRAPIModules;
 using System.Collections.Generic;
 
-namespace DynamicGamemodes.GameModes;
+namespace DynamicGamemode.GameModes;
 
 public class GunGame : GameMode
 {

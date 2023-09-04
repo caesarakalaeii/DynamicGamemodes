@@ -1,7 +1,7 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
 
-namespace DynamicGamemodes.GameModes;
+namespace DynamicGamemode.GameModes;
 
 public class Swap : GameMode
 {

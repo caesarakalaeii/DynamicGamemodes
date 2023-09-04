@@ -1,7 +1,7 @@
 ﻿using BattleBitAPI.Common;
 using BBRAPIModules;
 
-namespace DynamicGamemodes.GameModes;
+namespace DynamicGamemode.GameModes;
 public class Csgo : GameMode
 {
     public Csgo(DynamicGameMode r) : base(r)
