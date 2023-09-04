@@ -3,7 +3,7 @@ using BBRAPIModules;
 using DynamicGamemode;
 using System.Collections.Generic;
 
-namespace DynamicGamemodes
+namespace DynamicGamemode
 {
     public class TeamGunGame : GameMode
     {

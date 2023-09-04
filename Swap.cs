@@ -2,7 +2,7 @@
 using BBRAPIModules;
 using DynamicGamemode;
 
-namespace DynamicGamemodes;
+namespace DynamicGamemode;
 
 public class Swap : GameMode
 {

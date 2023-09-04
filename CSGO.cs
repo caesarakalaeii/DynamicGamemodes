@@ -2,7 +2,7 @@
 using BBRAPIModules;
 using DynamicGamemode;
 
-namespace DynamicGamemodes;
+namespace DynamicGamemode;
 public class Csgo : GameMode
 {
     public Csgo(DynamicGameMode r) : base(r)
